@@ -67,6 +67,13 @@
 - **Metadata**: DynamoDB or Cassandra (High write throughput, easy scaling).
 - **Object Storage**: S3 is cheaper and better for large blobs of text than a DB.
 
-### Cleanup (Purging)
+###Cleanup (Purging)
 - **Lazy Delete**: When a user tries to access an expired paste, delete it then.
 - **Batch Job**: Run a daily script to scan DB and remove expired entries from DB and S3.
+
+---
+
+## 📊 Diagram References
+
+Related architecture diagrams:
+- [Pastebin System Architecture Diagram](file:///Users/dj/Documents/Programming/techLead/tech-lead-repo/docs/system_design/diagrams/design_pastebin_1.mmd)

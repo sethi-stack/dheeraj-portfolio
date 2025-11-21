@@ -83,3 +83,10 @@ graph LR
 - **KGS Failure**: Keep a standby replica.
 - **Cache Failure**: Hit the DB (latency spike).
 - **DB Failure**: Replication (Master-Slave or Multi-Master).
+
+---
+
+## 📊 Diagram References
+
+Related architecture diagrams:
+- [URL Shortener System Architecture Diagram](file:///Users/dj/Documents/Programming/techLead/tech-lead-repo/docs/system_design/diagrams/design_url_shortener_1.mmd)

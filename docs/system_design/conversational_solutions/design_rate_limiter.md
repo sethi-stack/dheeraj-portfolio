@@ -84,3 +84,10 @@ graph LR
 ### Client-Side
 - Clients should respect `Retry-After` header.
 - Implement **Exponential Backoff** to avoid thundering herd.
+
+---
+
+## 📊 Diagram References
+
+Related architecture diagrams:
+- [Rate Limiter System Architecture Diagram](file:///Users/dj/Documents/Programming/techLead/tech-lead-repo/docs/system_design/diagrams/design_rate_limiter_1.mmd)

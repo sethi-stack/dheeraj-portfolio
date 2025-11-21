@@ -62,3 +62,10 @@
 2.  Coordinator requests data from replicas.
 3.  Waits for R responses.
 4.  **Read Repair**: If replicas disagree, return the latest version (Vector Clocks) and update the outdated replicas in the background.
+
+---
+
+## 📊 Diagram References
+
+Related architecture diagrams:
+- [Key-Value Store System Architecture Diagram](file:///Users/dj/Documents/Programming/techLead/tech-lead-repo/docs/system_design/diagrams/design_key_value_store_1.mmd)

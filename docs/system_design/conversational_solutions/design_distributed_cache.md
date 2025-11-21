@@ -68,3 +68,16 @@ graph TD
 ### Data Persistence (Optional)
 - **RDB (Snapshot)**: Save RAM to disk every X minutes.
 - **AOF (Append Only File)**: Log every write command. Slower but safer.
+
+### Monitoring
+- **Hit Rate**: % of requests served from cache vs. DB.
+- **Latency**: p50, p95, p99 for get/put operations.
+- **Eviction Rate**: How often items are evicted.
+- **Memory Usage**: % of RAM used.
+
+---
+
+## 📊 Diagram References
+
+Related architecture diagrams:
+- [Distributed Cache System Architecture Diagram](file:///Users/dj/Documents/Programming/techLead/tech-lead-repo/docs/system_design/diagrams/design_distributed_cache_1.mmd)

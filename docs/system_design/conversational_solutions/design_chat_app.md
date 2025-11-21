@@ -78,3 +78,10 @@ graph TD
 ### Media Files
 - Don't send images via WebSocket.
 - Upload to **S3**. Get a URL. Send the URL via WebSocket.
+
+---
+
+## 📊 Diagram References
+
+Related architecture diagrams:
+- [Chat App System Architecture Diagram](file:///Users/dj/Documents/Programming/techLead/tech-lead-repo/docs/system_design/diagrams/design_chat_app_1.mmd)
