@@ -1,0 +1,15 @@
+graph TD
+    User[User] -->|Type Prefix| LB[Load Balancer]
+    LB --> API[API Servers]
+    API -->|Lookup| Cache[Redis Cache]
+    Cache -->|Cache Miss| TrieService[Trie Service]
+    TrieService -->|Query| TrieDB[(Trie Data Structure)]
+    API -->|Get Top N| RankingService[Ranking Service]
+    RankingService -->|Popularity| AnalyticsDB[(Analytics DB)]
+    
+    subgraph Data Pipeline
+        Logs[Search Logs] -->|Stream| Kafka[Kafka]
+        Kafka -->|Process| Workers[Aggregation Workers]
+        Workers -->|Update Counts| AnalyticsDB
+        Workers -->|Rebuild| TrieDB
+    end

@@ -1,0 +1,16 @@
+graph TD
+    User[User] -->|Search/Book| LB[Load Balancer]
+    LB --> API[API Servers]
+    API -->|Event Data| EventDB[(Event DB)]
+    API -->|Seats| SeatService[Seat Service]
+    SeatService -->|Lock Seat| LockService[Distributed Lock - Redis]
+    SeatService -->|Update| SeatDB[(Seat Inventory DB)]
+    API -->|Book| BookingService[Booking Service]
+    BookingService -->|Payment| PaymentService[Payment Gateway]
+    BookingService -->|Confirm| Queue[Message Queue]
+    Queue -->|Send Ticket| NotifService[Notification Service]
+    
+    subgraph High-Traffic Events
+        API -->|Queue Users| WaitingRoom[Virtual Waiting Room]
+        WaitingRoom -->|Rate Limit| API
+    end

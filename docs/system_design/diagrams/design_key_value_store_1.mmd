@@ -1,0 +1,12 @@
+graph TD
+    Client[Client] -->|Put/Get| LB[Load Balancer]
+    LB --> Coord[Coordinator Node]
+    
+    subgraph Ring[Consistent Hashing Ring]
+        Coord -->|Replicate| N1[Node 1]
+        Coord -->|Replicate| N2[Node 2]
+        Coord -->|Replicate| N3[Node 3]
+        N1 -.->|Gossip| N2
+        N2 -.->|Gossip| N3
+        N3 -.->|Gossip| N1
+    end

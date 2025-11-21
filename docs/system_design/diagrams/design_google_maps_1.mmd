@@ -1,0 +1,16 @@
+graph TD
+    User[User] -->|Request Route| LB[Load Balancer]
+    LB --> API[API Servers]
+    API -->|Get Locations| LocationService[Location Service]
+    LocationService -->|Geocode| GeoDB[(Geo Database)]
+    API -->|Calculate Route| RoutingService[Routing Service]
+    RoutingService -->|Graph Data| GraphDB[(Road Network Graph DB)]
+    RoutingService -->|Traffic| TrafficService[Traffic Service]
+    API -->|Render Map| TileService[Map Tile Service]
+    TileService -->|Serve Tiles| CDN[CDN]
+    
+    subgraph Real-time Traffic
+        Devices[Mobile Devices] -->|Location Data| Kafka[Kafka Stream]
+        Kafka -->|Aggregate| TrafficWorkers[Traffic Workers]
+        TrafficWorkers -->|Update| TrafficService
+    end

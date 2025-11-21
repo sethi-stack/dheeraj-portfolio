@@ -1,0 +1,12 @@
+graph TD
+    User[User] -->|Upload/View| LB[Load Balancer]
+    LB --> API[API Servers]
+    API -->|Upload Media| Storage[Object Storage S3]
+    Storage -->|Process| Queue[Message Queue]
+    Queue -->|Resize/Filter| Workers[Image Processing Workers]
+    Workers -->|Store Variants| CDN[CDN]
+    API -->|Metadata| PostDB[(Posts DB)]
+    API -->|User/Follow| GraphDB[(Graph DB)]
+    API -->|Feed| FeedService[Feed Service]
+    FeedService -->|Cache| Redis[Redis]
+    FeedService -->|Query| PostDB

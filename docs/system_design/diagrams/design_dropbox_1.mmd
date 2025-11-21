@@ -1,0 +1,16 @@
+graph TD
+    User[User] -->|Upload/Download| LB[Load Balancer]
+    LB --> API[API Servers]
+    API -->|Metadata| MetadataDB[(Metadata DB)]
+    API -->|Chunks| ChunkServers[(Chunk Servers)]
+    ChunkServers -->|Replicate| RChunk[(Replica Chunk Servers)]
+    API -->|Sync Queue| Queue[Message Queue]
+    Queue -->|Process| SyncWorkers[Sync Workers]
+    SyncWorkers -->|Update All Devices| NotifService[Notification Service]
+    
+    subgraph File Processing
+        API -->|Large File| Splitter[File Splitter]
+        Splitter -->|Store Chunks| ChunkServers
+        API -->|Download| Assembler[File Assembler]
+        Assembler -->|Fetch Chunks| ChunkServers
+    end

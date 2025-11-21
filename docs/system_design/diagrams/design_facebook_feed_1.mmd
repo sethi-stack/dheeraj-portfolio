@@ -1,0 +1,16 @@
+graph TD
+    User[User] -->|Request Feed| LB[Load Balancer]
+    LB --> API[API Servers]
+    API -->|Check Cache| Cache[Redis Cache]
+    API -->|Query Posts| PostDB[(Posts DB)]
+    API -->|Get Friends| GraphDB[(Social Graph DB)]
+    API -->|Rank| RankingService[Ranking/ML Service]
+    
+    subgraph Feed Generation
+        RankingService -->|Score Posts| Cache
+        RankingService -->|Personalized| User
+    end
+    
+    Publisher[Content Publisher] -->|New Post| Queue[Message Queue]
+    Queue -->|Fan-out| Workers[Feed Workers]
+    Workers -->|Update Cache| Cache

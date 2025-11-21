@@ -1,0 +1,16 @@
+graph TD
+    User[User] -->|Watch| CDN[CDN]
+    CDN -->|Cache Miss| LB[Load Balancer]
+    LB --> API[API Servers]
+    API -->|Video Metadata| VideoDB[(Video DB)]
+    API -->|Recommend| RecEngine[Recommendation Engine]
+    API -->|Video Chunks| BlobStorage[(Blob Storage)]
+    
+    subgraph Upload Flow
+        Creator[Creator] -->|Upload| UploadAPI[Upload API]
+        UploadAPI -->|Store Raw| RawStorage[(Raw Video Storage)]
+        RawStorage -->|Encode| Queue[Message Queue]
+        Queue -->|Process| Workers[Transcoding Workers]
+        Workers -->|Multiple Qualities| BlobStorage
+        Workers -->|Update Metadata| VideoDB
+    end

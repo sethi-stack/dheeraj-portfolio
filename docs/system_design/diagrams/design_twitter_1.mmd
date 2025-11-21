@@ -1,0 +1,13 @@
+graph TD
+    User[User] -->|Post/Read| LB[Load Balancer]
+    LB --> API[API Servers]
+    API -->|Write| PostDB[(Posts DB)]
+    API -->|Read| TimelineService[Timeline Service]
+    TimelineService -->|Fan-out| Cache[Redis Cache]
+    TimelineService -->|Query| PostDB
+    API -->|Async| Queue[Message Queue]
+    Queue -->|Process| Workers[Background Workers]
+    Workers -->|Build Timeline| Cache
+    Workers -->|Notifications| NotifService[Notification Service]
+    API -->|Media Upload| CDN[CDN / S3]
+    API -->|User Data| UserDB[(User DB)]

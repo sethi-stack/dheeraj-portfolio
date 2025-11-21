@@ -1,0 +1,16 @@
+graph TD
+    Rider[Rider App] -->|Request Ride| LB[Load Balancer]
+    Driver[Driver App] -->|Update Location| LB
+    LB --> API[API Servers]
+    API -->|Match| MatchingService[Matching Service]
+    MatchingService -->|Query Nearby| LocationDB[(Location DB - Redis Geo)]
+    API -->|Route| MapsAPI[Maps API]
+    API -->|Pricing| PricingService[Pricing/Surge Service]
+    API -->|Payment| PaymentService[Payment Service]
+    API -->|Trip Data| TripDB[(Trip DB)]
+    
+    subgraph Real-time Updates
+        Driver -->|GPS Stream| Queue[Message Queue]
+        Queue -->|Update| LocationDB
+        LocationDB -->|Notify| Rider
+    end

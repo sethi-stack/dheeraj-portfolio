@@ -1,0 +1,13 @@
+graph TD
+    subgraph Indexing
+        Crawler[Crawler] -->|Raw Docs| Processor[Doc Processor]
+        Processor -->|Cleaned Docs| Indexer[Indexer]
+        Indexer -->|Build| Index[(Inverted Index)]
+    end
+
+    subgraph Serving
+        User[User] -->|Query| QP[Query Processor]
+        QP -->|Lookup| Index
+        QP -->|Rank| Ranker[Ranking Service]
+        Ranker -->|Results| User
+    end

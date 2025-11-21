@@ -1,0 +1,8 @@
+graph TD
+    User[User] -->|Upload/View| LB[Load Balancer]
+    LB --> App[App Server]
+    App -->|Get Key| KGS[Key Generation Service]
+    App -->|Read/Write Metadata| DB[(Metadata DB)]
+    App -->|Read/Write Content| S3[(Object Storage S3)]
+    App -->|Check Hot Pastes| Cache[Redis Cache]
+    KGS -->|Pre-generated Keys| KeyDB[(Key DB)]

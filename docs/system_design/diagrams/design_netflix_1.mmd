@@ -1,0 +1,16 @@
+graph TD
+    User[User] -->|Request| CDN[CDN]
+    CDN -->|Cache Miss| LB[Load Balancer]
+    LB --> API[API Servers]
+    API -->|Metadata| CatalogDB[(Content Catalog DB)]
+    API -->|Recommend| RecService[Recommendation Engine]
+    API -->|Get Video URL| Storage[Object Storage]
+    Storage -->|Adaptive Streaming| Encoder[Video Encoder]
+    Encoder -->|HLS/DASH| CDN
+    
+    subgraph Upload Pipeline
+        Creator[Content Creator] -->|Upload| UploadService[Upload Service]
+        UploadService -->|Raw Video| RawStorage[(Raw Storage)]
+        RawStorage -->|Transcode| Workers[Encoding Workers]
+        Workers -->|Store| Storage
+    end

@@ -1,0 +1,15 @@
+graph TD
+    Service[Notification Service] -->|Auth/Prefs| DB[(User Prefs DB)]
+    Service -->|Enqueue| MQ{Message Queues}
+    
+    MQ -->|Email Job| W_Email[Email Workers]
+    MQ -->|SMS Job| W_SMS[SMS Workers]
+    MQ -->|Push Job| W_Push[Push Workers]
+    
+    W_Email -->|Send| SES[AWS SES / SendGrid]
+    W_SMS -->|Send| Twilio[Twilio]
+    W_Push -->|Send| FCM[FCM / APNS]
+    
+    W_Email -->|Log| Logs[(Analytics/Logs)]
+    W_SMS -->|Log| Logs
+    W_Push -->|Log| Logs

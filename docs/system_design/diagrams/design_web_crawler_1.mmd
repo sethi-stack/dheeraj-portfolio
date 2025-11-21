@@ -1,0 +1,10 @@
+graph TD
+    Seed[Seed URLs] --> Frontier[URL Frontier]
+    Frontier -->|Get URL| Downloader[HTML Downloader]
+    Downloader -->|Resolve IP| DNS[DNS Cache]
+    Downloader -->|HTML| Parser[Content Parser]
+    Parser -->|Content| Deduper[Content Deduper]
+    Deduper -->|Unique Content| Storage[(Storage)]
+    Parser -->|Links| Extractor[URL Extractor]
+    Extractor -->|New URLs| Filter[URL Filter]
+    Filter -->|Unique URLs| Frontier
