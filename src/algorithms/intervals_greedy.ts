@@ -1,8 +1,13 @@
 /**
  * Intervals & Greedy Algorithms
+ * Optimized solutions using greedy approaches and interval manipulation
  */
 
-// --- Merge Intervals ---
+// ============================================================================
+// Problem 1: Merge Intervals
+// ============================================================================
+
+// Approach: Sort + Merge - O(n log n) time, O(n) space
 
 export function merge(intervals: number[][]): number[][] {
   if (intervals.length <= 1) return intervals;
@@ -28,7 +33,11 @@ export function merge(intervals: number[][]): number[][] {
   return result;
 }
 
-// --- Meeting Rooms II (Min Meeting Rooms) ---
+// ============================================================================
+// Problem 2: Meeting Rooms II (Min Meeting Rooms)
+// ============================================================================
+
+// Approach: Two-pointer - O(n log n) time, O(n) space
 
 export function minMeetingRooms(intervals: number[][]): number {
   if (intervals.length === 0) return 0;
@@ -50,7 +59,11 @@ export function minMeetingRooms(intervals: number[][]): number {
   return rooms;
 }
 
-// --- Best Time to Buy and Sell Stock ---
+// ============================================================================
+// Problem 3: Best Time to Buy and Sell Stock
+// ============================================================================
+
+// Approach: Single Pass Greedy - O(n) time, O(1) space
 
 export function maxProfit(prices: number[]): number {
   let minPrice = Infinity;
@@ -66,7 +79,11 @@ export function maxProfit(prices: number[]): number {
   return maxProfit;
 }
 
-// --- Maximum Subarray (Kadane's Algorithm) ---
+// ============================================================================
+// Problem 4: Maximum Subarray
+// ============================================================================
+
+// Approach: Kadane's Algorithm (Dynamic Programming/Greedy) - O(n) time, O(1) space
 
 export function maxSubArray(nums: number[]): number {
   let currentSum = nums[0];

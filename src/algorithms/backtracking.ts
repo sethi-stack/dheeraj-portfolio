@@ -1,8 +1,13 @@
 /**
  * Backtracking Algorithms
+ * Problems solved using recursive backtracking with decision trees
  */
 
-// --- Letter Combinations of a Phone Number ---
+// ============================================================================
+// Problem 1: Letter Combinations of a Phone Number
+// ============================================================================
+
+// Approach: Backtracking - O(4^n) time, O(n) space where n is digits length
 
 export function letterCombinations(digits: string): string[] {
   if (!digits) return [];
@@ -33,7 +38,11 @@ export function letterCombinations(digits: string): string[] {
   return result;
 }
 
-// --- Generate Parentheses ---
+// ============================================================================
+// Problem 2: Generate Parentheses
+// ============================================================================
+
+// Approach: Backtracking with constraints - O(4^n / sqrt(n)) time, O(n) space
 
 export function generateParenthesis(n: number): string[] {
   const result: string[] = [];
@@ -55,7 +64,11 @@ export function generateParenthesis(n: number): string[] {
   return result;
 }
 
-// --- N-Queens ---
+// ============================================================================
+// Problem 3: N-Queens
+// ============================================================================
+
+// Approach: Backtracking with constraint checking - O(n!) time, O(n²) space
 
 export function solveNQueens(n: number): string[][] {
   const result: string[][] = [];
@@ -93,7 +106,12 @@ export function solveNQueens(n: number): string[][] {
   return result;
 }
 
-// --- Word Search ---
+// ============================================================================
+// Problem 4: Word Search
+// ============================================================================
+
+// Approach: DFS Backtracking - O(m×n×4^L) time, O(L) space
+// where m,n are grid dimensions, L is word length
 
 export function exist(board: string[][], word: string): boolean {
   const rows = board.length;
@@ -124,7 +142,11 @@ export function exist(board: string[][], word: string): boolean {
   return false;
 }
 
-// --- Decode String ---
+// ============================================================================
+// Problem 5: Decode String
+// ============================================================================
+
+// Approach: Stack-based - O(n) time, O(n) space
 
 export function decodeString(s: string): string {
   const countStack: number[] = [];

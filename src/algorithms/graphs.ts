@@ -1,23 +1,25 @@
 /**
  * Graph Algorithms
+ * Each problem includes multiple solution approaches
  */
 
-// --- Number of Islands (DFS) ---
+// ============================================================================
+// Problem 1: Number of Islands
+// ============================================================================
 
+// Approach 1: DFS (Modify Grid) - O(rows × cols) time, O(rows × cols) space
 export function numIslands(grid: string[][]): number {
   if (!grid || grid.length === 0) return 0;
 
-  let count = 0;
   const rows = grid.length;
   const cols = grid[0].length;
+  let count = 0;
 
   function dfs(r: number, c: number) {
-    if (r < 0 || c < 0 || r >= rows || c >= cols || grid[r][c] === '0') {
+    if (r < 0 || r >= rows || c < 0 || c >= cols || grid[r][c] === '0') {
       return;
     }
-
-    grid[r][c] = '0'; // Mark as visited (sink the island)
-
+    grid[r][c] = '0'; // Mark as visited
     dfs(r + 1, c);
     dfs(r - 1, c);
     dfs(r, c + 1);
@@ -28,7 +30,7 @@ export function numIslands(grid: string[][]): number {
     for (let c = 0; c < cols; c++) {
       if (grid[r][c] === '1') {
         count++;
-        dfs(r, c);
+        dfs(r, c); // Sink entire island
       }
     }
   }
@@ -36,15 +38,116 @@ export function numIslands(grid: string[][]): number {
   return count;
 }
 
-// --- Course Schedule (Topological Sort / Cycle Detection) ---
+// Approach 2: BFS (Preserve Grid) - O(rows × cols) time, O(rows × cols) space
+export function numIslandsBFS(grid: string[][]): number {
+  if (!grid.length) return 0;
 
-export function canFinish(numCourses: number, prerequisites: number[][]): boolean {
-  const adj = new Map<number, number[]>();
+  const rows = grid.length;
+  const cols = grid[0].length;
+  const visited = new Set<string>();
+  let count = 0;
+
+  const directions = [
+    [0, 1],
+    [0, -1],
+    [1, 0],
+    [-1, 0],
+  ];
+
+  function bfs(r: number, c: number) {
+    const queue: [number, number][] = [[r, c]];
+    visited.add(`${r},${c}`);
+
+    while (queue.length > 0) {
+      const [row, col] = queue.shift()!;
+
+      for (const [dr, dc] of directions) {
+        const nr = row + dr;
+        const nc = col + dc;
+        const key = `${nr},${nc}`;
+
+        if (
+          nr >= 0 &&
+          nr < rows &&
+          nc >= 0 &&
+          nc < cols &&
+          grid[nr][nc] === '1' &&
+          !visited.has(key)
+        ) {
+          visited.add(key);
+          queue.push([nr, nc]);
+        }
+      }
+    }
+  }
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      if (grid[r][c] === '1' && !visited.has(`${r},${c}`)) {
+        count++;
+        bfs(r, c);
+      }
+    }
+  }
+  return count;
+}
+
+// ============================================================================
+// Problem 2: Course Schedule (Cycle Detection)
+// ============================================================================
+
+// Approach 1: DFS with States - O(V + E) time, O(V + E) space
+export function canFinishDFS(
+  numCourses: number,
+  prerequisites: number[][]
+): boolean {
+  const graph = new Map<number, number[]>();
+
+  // Build adjacency list
+  for (let i = 0; i < numCourses; i++) {
+    graph.set(i, []);
+  }
+  for (const [course, prereq] of prerequisites) {
+    graph.get(course)!.push(prereq);
+  }
+
+  const UNVISITED = 0;
+  const VISITING = 1;
+  const VISITED = 2;
+  const state = new Array(numCourses).fill(UNVISITED);
+
+  function hasCycle(course: number): boolean {
+    if (state[course] === VISITING) return true; // Cycle!
+    if (state[course] === VISITED) return false; // Already checked
+
+    state[course] = VISITING;
+    for (const prereq of graph.get(course)!) {
+      if (hasCycle(prereq)) return true;
+    }
+    state[course] = VISITED;
+    return false;
+  }
+
+  for (let i = 0; i < numCourses; i++) {
+    if (hasCycle(i)) return false;
+  }
+  return true;
+}
+
+// Approach 2: Topological Sort (Kahn's Algorithm) - O(V + E) time, O(V + E) space
+export function canFinish(
+  numCourses: number,
+  prerequisites: number[][]
+): boolean {
   const inDegree = new Array(numCourses).fill(0);
+  const graph = new Map<number, number[]>();
 
-  for (const [course, pre] of prerequisites) {
-    if (!adj.has(pre)) adj.set(pre, []);
-    adj.get(pre)!.push(course);
+  for (let i = 0; i < numCourses; i++) {
+    graph.set(i, []);
+  }
+
+  for (const [course, prereq] of prerequisites) {
+    graph.get(prereq)!.push(course);
     inDegree[course]++;
   }
 
@@ -53,25 +156,25 @@ export function canFinish(numCourses: number, prerequisites: number[][]): boolea
     if (inDegree[i] === 0) queue.push(i);
   }
 
-  let count = 0;
+  let completed = 0;
   while (queue.length > 0) {
-    const current = queue.shift()!;
-    count++;
+    const course = queue.shift()!;
+    completed++;
 
-    if (adj.has(current)) {
-      for (const neighbor of adj.get(current)!) {
-        inDegree[neighbor]--;
-        if (inDegree[neighbor] === 0) {
-          queue.push(neighbor);
-        }
+    for (const next of graph.get(course)!) {
+      inDegree[next]--;
+      if (inDegree[next] === 0) {
+        queue.push(next);
       }
     }
   }
 
-  return count === numCourses;
+  return completed === numCourses;
 }
 
-// --- Clone Graph ---
+// ============================================================================
+// Problem 3: Clone Graph
+// ============================================================================
 
 export class Node {
   val: number;
@@ -82,45 +185,59 @@ export class Node {
   }
 }
 
+// Approach: DFS with Hash Map - O(V + E) time, O(V) space
 export function cloneGraph(node: Node | null): Node | null {
   if (!node) return null;
-  const map = new Map<Node, Node>();
 
-  function dfs(curr: Node): Node {
-    if (map.has(curr)) return map.get(curr)!;
+  const clones = new Map<Node, Node>();
 
-    const copy = new Node(curr.val);
-    map.set(curr, copy);
-
-    for (const neighbor of curr.neighbors) {
-      copy.neighbors.push(dfs(neighbor));
+  function dfs(original: Node): Node {
+    if (clones.has(original)) {
+      return clones.get(original)!;
     }
-    return copy;
+
+    const clone = new Node(original.val);
+    clones.set(original, clone); // Save before recursing!
+
+    for (const neighbor of original.neighbors) {
+      clone.neighbors.push(dfs(neighbor));
+    }
+
+    return clone;
   }
 
   return dfs(node);
 }
 
-// --- Word Ladder ---
+// ============================================================================
+// Problem 4: Word Ladder
+// ============================================================================
 
-export function ladderLength(beginWord: string, endWord: string, wordList: string[]): number {
+// Approach: BFS - O(M² × N) time, O(N) space
+// where M = word length, N = wordList size
+export function ladderLength(
+  beginWord: string,
+  endWord: string,
+  wordList: string[]
+): number {
   const wordSet = new Set(wordList);
   if (!wordSet.has(endWord)) return 0;
 
   const queue: [string, number][] = [[beginWord, 1]];
-  const visited = new Set([beginWord]);
+  const visited = new Set<string>([beginWord]);
 
   while (queue.length > 0) {
     const [word, level] = queue.shift()!;
 
     if (word === endWord) return level;
 
+    // Try changing each position
     for (let i = 0; i < word.length; i++) {
       for (let c = 97; c <= 122; c++) {
-        const char = String.fromCharCode(c);
-        if (char === word[i]) continue;
+        // 'a' to 'z'
+        const newWord =
+          word.slice(0, i) + String.fromCharCode(c) + word.slice(i + 1);
 
-        const newWord = word.slice(0, i) + char + word.slice(i + 1);
         if (wordSet.has(newWord) && !visited.has(newWord)) {
           visited.add(newWord);
           queue.push([newWord, level + 1]);

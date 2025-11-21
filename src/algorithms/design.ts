@@ -1,8 +1,16 @@
 /**
- * Design Algorithms
+ * Design & Data Structure Implementations
+ * Advanced data structures with optimized operations
  */
 
-// --- LRU Cache ---
+// ============================================================================
+// Problem 1: LRU Cache
+// ============================================================================
+
+// Approach: HashMap + Doubly Linked List
+// - get(): O(1) time
+// - put(): O(1) time
+// - Space: O(capacity)
 
 class DNode {
   key: number;
@@ -67,7 +75,15 @@ export class LRUCache {
   }
 }
 
-// --- Trie (Prefix Tree) ---
+// ============================================================================
+// Problem 2: Trie (Prefix Tree)
+// ============================================================================
+
+// Approach: Tree structure with character nodes
+// - insert(word): O(m) time where m is word length
+// - search(word): O(m) time
+// - startsWith(prefix): O(m) time
+// - Space: O(ALPHABET_SIZE × N × M) where N is number of words
 
 class TrieNode {
   children: Map<string, TrieNode>;
@@ -115,7 +131,16 @@ export class Trie {
   }
 }
 
-// --- Min Stack ---
+// ============================================================================
+// Problem 3: Min Stack
+// ============================================================================
+
+// Approach: Two stacks (main + min tracking)
+// - push(): O(1) time
+// - pop(): O(1) time
+// - top(): O(1) time
+// - getMin(): O(1) time
+// - Space: O(n)
 
 export class MinStack {
   private stack: number[];

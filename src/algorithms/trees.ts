@@ -1,5 +1,6 @@
 /**
  * Tree Algorithms
+ * Binary tree operations and traversals
  */
 
 export class TreeNode {
@@ -13,14 +14,22 @@ export class TreeNode {
   }
 }
 
-// --- Maximum Depth ---
+// ============================================================================
+// Problem 1: Maximum Depth of Binary Tree
+// ============================================================================
+
+// Approach: Recursive DFS - O(n) time, O(h) space where h is height
 
 export function maxDepth(root: TreeNode | null): number {
   if (!root) return 0;
   return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 }
 
-// --- Invert Binary Tree ---
+// ============================================================================
+// Problem 2: Invert Binary Tree
+// ============================================================================
+
+// Approach: Recursive swap - O(n) time, O(h) space
 
 export function invertTree(root: TreeNode | null): TreeNode | null {
   if (!root) return null;
@@ -32,7 +41,11 @@ export function invertTree(root: TreeNode | null): TreeNode | null {
   return root;
 }
 
-// --- Binary Tree Level Order Traversal ---
+// ============================================================================
+// Problem 3: Binary Tree Level Order Traversal
+// ============================================================================
+
+// Approach: BFS with queue - O(n) time, O(w) space where w is max width
 
 export function levelOrder(root: TreeNode | null): number[][] {
   if (!root) return [];
@@ -54,7 +67,11 @@ export function levelOrder(root: TreeNode | null): number[][] {
   return result;
 }
 
-// --- Binary Tree Maximum Path Sum ---
+// ============================================================================
+// Problem 4: Binary Tree Maximum Path Sum
+// ============================================================================
+
+// Approach: DFS with global max - O(n) time, O(h) space
 
 export function maxPathSum(root: TreeNode | null): number {
   let maxSum = -Infinity;
@@ -77,7 +94,11 @@ export function maxPathSum(root: TreeNode | null): number {
   return maxSum;
 }
 
-// --- Serialize and Deserialize Binary Tree ---
+// ============================================================================
+// Problem 5: Serialize and Deserialize Binary Tree
+// ============================================================================
+
+// Serialize Approach: Preorder DFS - O(n) time, O(n) space
 
 export function serialize(root: TreeNode | null): string {
   const result: string[] = [];
