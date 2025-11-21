@@ -1,0 +1,6 @@
+graph TD
+    UserA[User A] <--> LB[Load Balancer]
+    LB <--> CS[Chat Server (WebSocket)]
+    CS <--> Redis[Redis (Pub/Sub + Presence)]
+    CS <--> DB[(Cassandra - Messages)]
+    UserB[User B] <--> LB

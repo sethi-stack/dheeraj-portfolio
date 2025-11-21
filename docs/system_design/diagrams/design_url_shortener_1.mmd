@@ -1,0 +1,6 @@
+graph LR
+    User --> LB[Load Balancer]
+    LB --> Web[Web Servers]
+    Web --> Cache[Redis Cache]
+    Web --> DB[(Database)]
+    Web --> KGS[Key Generation Service]

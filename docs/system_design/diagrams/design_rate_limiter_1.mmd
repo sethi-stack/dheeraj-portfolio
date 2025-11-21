@@ -1,0 +1,6 @@
+graph LR
+    Client --> LB[Load Balancer]
+    LB --> RL[Rate Limiter Service]
+    RL --> Redis[(Redis Cluster)]
+    RL -- Allowed --> API[API Servers]
+    RL -- Denied --> Client
