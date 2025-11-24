@@ -519,6 +519,41 @@ Before bed, mentally review 3 things you learned today. Research shows this impr
 - Weekdays: 1 hour/day
 - Weekends: 3 hours total
 
+### Track D: The Integrated Mix (Holistic Approach) - *New!*
+**Time Commitment:** 10-12 hours/week (Same as Track B)
+**Best For:** Engineers who get bored with one topic or want to simulate the variety of a real tech lead role.
+
+**The Philosophy:**
+Instead of phases, you practice **all 4 pillars every week**. This mimics the actual job of a Tech Lead, where you might code in the morning, design a system after lunch, and lead a meeting in the afternoon.
+
+**Weekly Rhythm (Repeat for 24 Weeks):**
+
+| Day | Theme | Activity | Time |
+|-----|-------|----------|------|
+| **Mon** | **Algorithms Core** | Solve 2 Medium problems (Focus on 1 pattern/week) | 1.5h |
+| **Tue** | **System Design** | Design 1 component of a system (e.g., "Just the notification service for Uber") | 1.5h |
+| **Wed** | **Architecture/LLD** | Read 1 concept (e.g., CQRS) OR implement 1 Design Pattern | 1.5h |
+| **Thu** | **Leadership/Soft Skills** | Read 1 section of Communication Roadmap OR write 1 "Intuition Guide" | 1.5h |
+| **Fri** | **Mixed Review** | 1 Hard Algo OR Deep dive into Tuesday's system design | 1.5h |
+| **Sat** | **Deep Work** | Full System Design (45m) + 2 Algos (45m) + 1 Teaching Artifact (30m) | 2.5h |
+
+**Monthly Progression:**
+- **Month 1:** Arrays/Strings + Load Balancing/Caching + Creational Patterns + Basic Communication
+- **Month 2:** Trees/Graphs + Databases/Sharding + Structural Patterns + Stakeholder Management
+- **Month 3:** DP/Backtracking + Queues/Async + Behavioral Patterns + Negotiation
+- **Month 4:** Advanced Graphs + Consistency/CAP + Microservices + Crisis Management
+- **Month 5:** Full Mock Interviews (Algo + System Design mixed)
+- **Month 6:** Final Polish (Weakest areas across all pillars)
+
+**Pros:**
+- Never lose touch with any skill
+- Better retention through variety (interleaving)
+- Feels more like "work" than "study"
+
+**Cons:**
+- Slower progress in any single area
+- Requires more context switching
+
 ---
 
 ## 🎓 Final Advice: From IC to Tech Lead
