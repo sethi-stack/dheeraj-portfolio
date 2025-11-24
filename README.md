@@ -30,7 +30,12 @@ A curated list of algorithms with TypeScript implementations and explanations.
 - [TypeScript Implementations](./src/algorithms/)
 - [Explanations](./docs/algorithms/explanations/)
 
-### 5. [Papers & Concepts](./docs/papers_and_concepts/)
+### 5. [Communication & Leadership](./docs/communication/techlead_communication_roadmap.md)
+Essential communication skills and leadership practices for tech leads.
+- [Tech Lead Communication Roadmap](./docs/communication/techlead_communication_roadmap.md) - From IC to Tech Lead communication transformation
+- [Production Engineering & Leadership Concepts](./docs/concepts/production_engineering_concepts.md) - Observability, deployment, security, APIs, performance, modern practices
+
+### 6. [Papers & Concepts](./docs/papers_and_concepts/)
 Summaries of influential research papers and core distributed systems concepts.
 
 ## 🗓️ Weekly Practice Plan
@@ -42,7 +47,7 @@ Summaries of influential research papers and core distributed systems concepts.
 | **3** | **Advanced Architecture** | Read about [DDD & CQRS](./docs/architecture/ddd_hexagonal_cqrs_event_sourcing.md). Apply patterns to a mock project. |
 | **4** | **Low Level Design** | Practice [Design Patterns](./docs/lld/lld_index.md). Implement a [Parking Lot](./docs/lld/implementations/parking_lot.ts). |
 | **5** | **Distributed Systems** | Read [Dynamo Paper](./docs/papers_and_concepts/storage_and_databases.md). Understand consistency models. |
-| **6** | **Leadership & Soft Skills** | Review [Tech Lead Responsibilities](./docs/papers_and_concepts/ai_for_tech_leads.md). Practice behavioral questions. |
+| **6** | **Leadership & Communication** | Review [Tech Lead Communication Roadmap](./docs/communication/techlead_communication_roadmap.md). Practice STAR method for behavioral questions. |
 
 ## 🚀 Getting Started
 
