@@ -38,6 +38,24 @@ Essential communication skills and leadership practices for tech leads.
 ### 6. [Papers & Concepts](./docs/papers_and_concepts/)
 Summaries of influential research papers and core distributed systems concepts.
 
+---
+
+## 📖 Personalized Study Roadmap
+
+**For experienced engineers (8+ years) preparing for Tech Lead/Staff/Principal roles:**
+
+This repository doubles as a comprehensive self-study curriculum. We've created a structured 24-week roadmap with:
+- **3 intensity tracks** (Aggressive: 15-20h/week, Balanced: 10-12h/week, Gradual: 6-8h/week)
+- **Phase-based learning** (Algorithms → System Design → Architecture → Communication → Mocks)
+- **Spaced repetition** and active recall techniques
+- **Real-world application** strategies
+- **Mock interview schedules**
+
+👉 **[View Full Study Roadmap](./STUDY_ROADMAP.md)**  
+👉 **[Track Your Progress](./PROGRESS_TRACKER.md)**
+
+---
+
 ## 🗓️ Weekly Practice Plan
 
 | Week | Focus Area | Activities |
