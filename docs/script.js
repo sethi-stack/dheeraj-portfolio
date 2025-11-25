@@ -28,6 +28,52 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Carousel functionality
+let currentSlide = 0;
+const carousel = document.querySelector('.carousel-track');
+const cards = document.querySelectorAll('.carousel-card');
+const totalSlides = cards.length;
+
+function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 32; // 2rem
+    carousel.scrollTo({
+        left: currentSlide * (cardWidth + gap),
+        behavior: 'smooth'
+    });
+    updateDots();
+}
+
+function moveCarousel(direction) {
+    currentSlide += direction;
+    if (currentSlide < 0) currentSlide = totalSlides - 1;
+    if (currentSlide >= totalSlides) currentSlide = 0;
+    updateCarousel();
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+}
+
+function updateDots() {
+    const dotsContainer = document.getElementById('carousel-dots');
+    if (!dotsContainer) return;
+    
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = `carousel-dot ${i === currentSlide ? 'active' : ''}`;
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+    }
+}
+
+// Initialize carousel dots
+document.addEventListener('DOMContentLoaded', () => {
+    updateDots();
+});
+
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
