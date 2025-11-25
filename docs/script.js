@@ -53,12 +53,3 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 });
-
-// Add parallax effect to hero background
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
