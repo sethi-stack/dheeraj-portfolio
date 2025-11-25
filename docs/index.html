@@ -1016,18 +1016,64 @@ graph TB
         // Navigation toggle for mobile
         function toggleNav() {
             const navMenu = document.querySelector('.nav-menu');
+            const navToggle = document.querySelector('.nav-toggle');
             navMenu.classList.toggle('active');
+            
+            // Toggle hamburger icon
+            if (navMenu.classList.contains('active')) {
+                navToggle.innerHTML = '✕';
+            } else {
+                navToggle.innerHTML = '☰';
+            }
         }
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Dropdown Toggle
+            const dropdownToggle = document.querySelector('.dropdown > .nav-link');
             const dropdown = document.querySelector('.dropdown');
-            if (dropdown && !dropdown.contains(event.target)) {
-                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-                if (dropdownMenu) {
-                    dropdownMenu.style.display = 'none';
-                }
+            
+            if (dropdownToggle) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    // Only prevent default on mobile/tablet where hover isn't primary
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
             }
+
+            // Close mobile menu when clicking a link (except dropdown toggle)
+            const navLinks = document.querySelectorAll('.nav-link:not(.dropdown > .nav-link), .dropdown-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const navMenu = document.querySelector('.nav-menu');
+                    const navToggle = document.querySelector('.nav-toggle');
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                        navToggle.innerHTML = '☰';
+                    }
+                });
+            });
+
+            // Close dropdown and menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const navContainer = document.querySelector('.nav-container');
+                const navMenu = document.querySelector('.nav-menu');
+                const navToggle = document.querySelector('.nav-toggle');
+                
+                // Close dropdown if clicked outside
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('active');
+                }
+                
+                // Close mobile menu if clicked outside
+                if (window.innerWidth <= 768 && 
+                    navMenu.classList.contains('active') && 
+                    !navContainer.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    navToggle.innerHTML = '☰';
+                }
+            });
         });
 
         // Sticky navbar on scroll

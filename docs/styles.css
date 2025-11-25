@@ -177,7 +177,8 @@ body {
     .nav-menu {
         position: fixed;
         top: 70px;
-        left: -100%;
+        right: -100%; /* Start off-screen to the right */
+        left: auto;   /* Reset left positioning */
         flex-direction: column;
         background: var(--bg-secondary);
         width: 80%;
@@ -185,14 +186,16 @@ body {
         height: calc(100vh - 70px);
         padding: 2rem;
         gap: 1rem;
-        transition: left 0.3s ease;
-        border-right: 1px solid rgba(99, 102, 241, 0.3);
-        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+        transition: right 0.3s ease; /* Animate right property */
+        border-left: 1px solid rgba(99, 102, 241, 0.3); /* Border on left side */
+        border-right: none;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3); /* Shadow on left side */
         overflow-y: auto;
     }
 
     .nav-menu.active {
-        left: 0;
+        right: 0; /* Slide in to 0 */
+        left: auto;
     }
 
     .nav-toggle {
@@ -209,9 +212,20 @@ body {
         box-shadow: none;
         border: none;
         background: rgba(99, 102, 241, 0.05);
+        display: none; /* Hidden by default on mobile */
     }
 
+    /* Show dropdown when parent has active class */
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    /* Disable hover effect on mobile */
     .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+    
+    .dropdown.active:hover .dropdown-menu {
         display: block;
     }
 }
