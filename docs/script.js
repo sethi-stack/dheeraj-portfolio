@@ -2,15 +2,28 @@
 function toggleProject(projectId) {
     const details = document.getElementById(`${projectId}-details`);
     const isActive = details.classList.contains('active');
+    const parentCard = details.closest('.project-card');
+    const currentIndicator = parentCard.querySelector('.expand-indicator');
     
-    // Close all project details
+    // Store the original text from the current indicator (without the arrow)
+    const currentText = currentIndicator.textContent.replace(/^[▼▲]\s*/, '');
+    
+    // Close all project details and reset all indicators to collapsed state
     document.querySelectorAll('.project-details').forEach(detail => {
         detail.classList.remove('active');
+    });
+    
+    document.querySelectorAll('.expand-indicator').forEach(indicator => {
+        const text = indicator.textContent.replace(/^[▼▲]\s*/, '');
+        indicator.innerHTML = `▼ ${text}`;
     });
     
     // Toggle current project
     if (!isActive) {
         details.classList.add('active');
+        if (currentIndicator) {
+            currentIndicator.innerHTML = `▲ ${currentText}`;
+        }
     }
 }
 
@@ -98,4 +111,36 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
+});
+
+// Skills slider scroll function
+let currentSkillsPage = 0;
+const skillsPerPage = 6; // 3 columns x 2 rows
+
+function scrollSkills(direction) {
+    const skillCategories = document.querySelectorAll('.skill-category');
+    const totalPages = Math.ceil(skillCategories.length / skillsPerPage);
+    
+    currentSkillsPage += direction;
+    
+    // Loop around
+    if (currentSkillsPage < 0) currentSkillsPage = totalPages - 1;
+    if (currentSkillsPage >= totalPages) currentSkillsPage = 0;
+    
+    // Hide all categories first
+    skillCategories.forEach((category, index) => {
+        const startIndex = currentSkillsPage * skillsPerPage;
+        const endIndex = startIndex + skillsPerPage;
+        
+        if (index >= startIndex && index < endIndex) {
+            category.style.display = 'block';
+        } else {
+            category.style.display = 'none';
+        }
+    });
+}
+
+// Initialize skills display on page load
+document.addEventListener('DOMContentLoaded', () => {
+    scrollSkills(0);
 });

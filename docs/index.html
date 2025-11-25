@@ -107,84 +107,127 @@
                 <!-- Openlane -->
                 <div class="project-card" onclick="toggleProject('openlane')">
                     <div class="project-header">
-                        <h3>🚗 Openlane Inc.</h3>
+                        <div class="project-header-top">
+                            <h3>🚗 Openlane Inc.</h3>
+                            <span class="expand-indicator">▼ Five 9s architecture</span>
+                        </div>
                         <span class="project-role">Software Engineer II</span>
                         <span class="project-duration">2023 - Present</span>
                     </div>
-                    <p class="project-tagline">North America's leading B2B car auction marketplace</p>
-                    <div class="project-highlights">
-                        <span class="badge">$120K saved</span>
-                        <span class="badge">Five 9s uptime</span>
-                        <span class="badge">AI moderation</span>
+                    <div class="project-collapsed-content">
+                        <div class="project-collapsed-left">
+                            <p class="project-tagline">North America's leading B2B car auction marketplace</p>
+                            <div class="project-highlights">
+                                <span class="badge">$120K saved</span>
+                                <span class="badge">Five 9s uptime</span>
+                                <span class="badge">AI moderation</span>
+                            </div>
+                        </div>
+                        <div class="project-collapsed-right">
+                            <div class="project-preview-image-wrapper">
+                                <img src="images/openlane-team.png" alt="Openlane Engineering Team" class="project-preview-image">
+                            </div>
+                        </div>
                     </div>
                     <div id="openlane-details" class="project-details">
-                        <h4>Key Achievements:</h4>
-                        <ul>
-                            <li><strong>$120K/year savings:</strong> Solved 100TB storage crisis with Determinable UUID algorithm</li>
-                            <li><strong>Five 9s (99.999%) availability:</strong> Architected IAM service across 3 legacy systems</li>
-                            <li><strong>$50K/year savings:</strong> Self-initiated AI moderation (Gemini), 20% arbitration reduction</li>
-                            <li><strong>Flawless Android launch:</strong> Led 2-week webview sprint, 10+ features, 4.7★ rating</li>
-                            <li><strong>Mobile UX transformation:</strong> 2-day gallery redesign, NPS +40 points</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech">Node.js</span>
-                            <span class="tech">.NET</span>
-                            <span class="tech">React</span>
-                            <span class="tech">Svelte</span>
-                            <span class="tech">AWS</span>
-                            <span class="tech">Gemini AI</span>
-                        </div>
-                        <div class="project-image-wrapper">
-                            <img src="images/openlane-team.png" alt="Openlane Engineering Team" class="project-image">
-                            <p class="image-caption">With the Openlane engineering team</p>
+                        <div class="project-details-content">
+                            <div class="project-details-left">
+                                <h4>Key Achievements:</h4>
+                                <ul>
+                                    <li><strong>$120K/year savings:</strong> Solved 100TB storage crisis with Determinable UUID algorithm</li>
+                                    <li><strong>Five 9s (99.999%) availability:</strong> Architected IAM service across 3 legacy systems</li>
+                                    <li><strong>$50K/year savings:</strong> Self-initiated AI moderation (Gemini), 20% arbitration reduction</li>
+                                    <li><strong>Flawless Android launch:</strong> Led 2-week webview sprint, 10+ features, 4.7★ rating</li>
+                                    <li><strong>Mobile UX transformation:</strong> 2-day gallery redesign, NPS +40 points</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech">Node.js</span>
+                                    <span class="tech">.NET</span>
+                                    <span class="tech">React</span>
+                                    <span class="tech">Svelte</span>
+                                    <span class="tech">AWS</span>
+                                    <span class="tech">Gemini AI</span>
+                                </div>
+                            </div>
+                            <div class="project-details-right">
+                                <div class="project-image-wrapper">
+                                    <img src="images/openlane-team.png" alt="Openlane Engineering Team" class="project-image">
+                                    <p class="image-caption">With the Openlane engineering team</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="project-arrow">↓</div>
 
                 <!-- FoodMesh -->
                 <div class="project-card highlight-card" onclick="toggleProject('foodmesh')">
                     <div class="project-header">
-                        <h3>🍃 FoodMesh</h3>
+                        <div class="project-header-top">
+                            <h3>🍃 FoodMesh</h3>
+                            <span class="expand-indicator">▼ $500K crisis story</span>
+                        </div>
                         <span class="project-role">Software Consultant</span>
                         <span class="project-duration">2022 - 2023</span>
                     </div>
-                    <p class="project-tagline">Food recovery platform with social impact</p>
-                    <div class="project-highlights">
-                        <span class="badge critical">$500K crisis</span>
-                        <span class="badge">50M meals</span>
-                        <span class="badge">Solo ownership</span>
+                    <div class="project-collapsed-content">
+                        <div class="project-collapsed-left">
+                            <p class="project-tagline">Food recovery platform with social impact</p>
+                            <div class="project-highlights">
+                                <span class="badge critical">$500K crisis</span>
+                                <span class="badge">50M meals</span>
+                                <span class="badge">Solo ownership</span>
+                            </div>
+                        </div>
+                        <div class="project-collapsed-right">
+                            <div class="project-preview-image-wrapper">
+                                <img src="images/foodmesh-team.png" alt="FoodMesh Team" class="project-preview-image">
+                            </div>
+                        </div>
                     </div>
                     <div id="foodmesh-details" class="project-details">
-                        <h4>The $500K AWS Hack Recovery:</h4>
-                        <p class="crisis-highlight">
-                            <strong>Solo technical person</strong> during existential crisis. AWS account hacked, $500K charges in 2 days. 
-                            Implemented production-grade security (IAM, MFA, CloudTrail, Config), convinced AWS to cancel charges—saved company from bankruptcy.
-                        </p>
-                        <h4>Platform Impact:</h4>
-                        <ul>
-                            <li><strong>35M kg food diverted:</strong> Equivalent to 50 million meals</li>
-                            <li><strong>96M kg CO2 saved:</strong> Environmental impact</li>
-                            <li><strong>&lt;50ms latency:</strong> PostGIS spatial query optimization (from 2s)</li>
-                            <li><strong>99.9% crash-free:</strong> Flutter mobile app for drivers</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech">Python</span>
-                            <span class="tech">Django</span>
-                            <span class="tech">PostGIS</span>
-                            <span class="tech">Flutter</span>
-                            <span class="tech">AWS Security</span>
-                        </div>
-                        <div class="project-image-wrapper">
-                            <img src="images/foodmesh-team.png" alt="FoodMesh Team" class="project-image">
-                            <p class="image-caption">With the FoodMesh team making an impact</p>
+                        <div class="project-details-content">
+                            <div class="project-details-left">
+                                <h4>The $500K AWS Hack Recovery:</h4>
+                                <p class="crisis-highlight">
+                                    <strong>Solo technical person</strong> during existential crisis. AWS account hacked, $500K charges in 2 days. 
+                                    Implemented production-grade security (IAM, MFA, CloudTrail, Config), convinced AWS to cancel charges—saved company from bankruptcy.
+                                </p>
+                                <h4>Platform Impact:</h4>
+                                <ul>
+                                    <li><strong>35M kg food diverted:</strong> Equivalent to 50 million meals</li>
+                                    <li><strong>96M kg CO2 saved:</strong> Environmental impact</li>
+                                    <li><strong>&lt;50ms latency:</strong> PostGIS spatial query optimization (from 2s)</li>
+                                    <li><strong>99.9% crash-free:</strong> Flutter mobile app for drivers</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech">Python</span>
+                                    <span class="tech">Django</span>
+                                    <span class="tech">PostGIS</span>
+                                    <span class="tech">Flutter</span>
+                                    <span class="tech">AWS Security</span>
+                                </div>
+                            </div>
+                            <div class="project-details-right">
+                                <div class="project-image-wrapper">
+                                    <img src="images/foodmesh-team.png" alt="FoodMesh Team" class="project-image">
+                                    <p class="image-caption">With the FoodMesh team making an impact</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <div class="project-arrow">↓</div>
+
                 <!-- Holland & Barrett -->
                 <div class="project-card" onclick="toggleProject('hb')">
                     <div class="project-header">
-                        <h3>🌿 Holland & Barrett</h3>
+                        <div class="project-header-top">
+                            <h3>🌿 Holland & Barrett</h3>
+                            <span class="expand-indicator">▼ Promo DSL journey</span>
+                        </div>
                         <span class="project-role">Software Engineer</span>
                         <span class="project-duration">2018 - 2022</span>
                     </div>
@@ -212,10 +255,15 @@
                     </div>
                 </div>
 
+                <div class="project-arrow">↓</div>
+
                 <!-- Rheumera -->
                 <div class="project-card" onclick="toggleProject('rheumera')">
                     <div class="project-header">
-                        <h3>🏥 Rheumera</h3>
+                        <div class="project-header-top">
+                            <h3>🏥 Rheumera</h3>
+                            <span class="expand-indicator">▼ AI in healthcare</span>
+                        </div>
                         <span class="project-role">Lead Software Engineer</span>
                         <span class="project-duration">2024 - 2025</span>
                     </div>
@@ -371,52 +419,65 @@
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title">Technical Arsenal</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill-tags">
-                        <span>.NET Core</span>
-                        <span>Node.js</span>
-                        <span>Java/Spring</span>
-                        <span>Python</span>
+            <div class="skills-slider-container">
+                <button class="skills-prev" onclick="scrollSkills(-1)">‹</button>
+                <div class="skills-slider">
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="skill-tags">
+                            <span>.NET Core</span>
+                            <span>Node.js</span>
+                            <span>Java/Spring</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="skill-tags">
+                            <span>React</span>
+                            <span>Svelte</span>
+                            <span>TypeScript</span>
+                            <span>StencilJS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Mobile Development</h3>
+                        <div class="skill-tags">
+                            <span>Android Native</span>
+                            <span>Kotlin</span>
+                            <span>Flutter</span>
+                            <span>React Native</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Cloud & DevOps</h3>
+                        <div class="skill-tags">
+                            <span>AWS</span>
+                            <span>Azure</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Data & Messaging</h3>
+                        <div class="skill-tags">
+                            <span>ElasticSearch</span>
+                            <span>PostgreSQL</span>
+                            <span>Kafka</span>
+                            <span>Redis</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI & Specialized</h3>
+                        <div class="skill-tags">
+                            <span>OpenAI API</span>
+                            <span>Gemini</span>
+                            <span>Antlr4</span>
+                            <span>PostGIS</span>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill-tags">
-                        <span>React</span>
-                        <span>Svelte</span>
-                        <span>TypeScript</span>
-                        <span>StencilJS</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
-                    <div class="skill-tags">
-                        <span>AWS</span>
-                        <span>Azure</span>
-                        <span>Docker</span>
-                        <span>Kubernetes</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Data & Messaging</h3>
-                    <div class="skill-tags">
-                        <span>ElasticSearch</span>
-                        <span>PostgreSQL</span>
-                        <span>Kafka</span>
-                        <span>Redis</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>AI & Specialized</h3>
-                    <div class="skill-tags">
-                        <span>OpenAI API</span>
-                        <span>Gemini</span>
-                        <span>Antlr4</span>
-                        <span>PostGIS</span>
-                    </div>
-                </div>
+                <button class="skills-next" onclick="scrollSkills(1)">›</button>
             </div>
         </div>
     </section>
@@ -450,6 +511,9 @@
                     <p class="education-description">
                         Certified in project management methodologies, demonstrating leadership and delivery expertise.
                     </p>
+                    <div class="certification-badge-wrapper">
+                        <img src="images/pmp-badge.png" alt="PMP Certification Badge" class="certification-badge-image">
+                    </div>
                     <div class="education-badge">Industry Standard</div>
                 </div>
 
