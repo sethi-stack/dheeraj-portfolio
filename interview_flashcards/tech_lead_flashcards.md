@@ -67,7 +67,7 @@
 *   **The $500K AWS Hack (FoodMesh):**
     - **Situation:** AWS account hacked, $500K charges in 2 days, I was the only tech person
     - **Response:** Worked with AWS consultants, identified every hacker resource, implemented security hardening
-    - **Outcome:** AWS canceled charges, saved company from bankruptcy
+    - **Outcome:** AWS canceled charges, **contained crisis early and avoided all losses**
 *   **What I Learned:** Documentation is everything when dealing with stakeholders. Staying calm under existential pressure is a skill.
 
 ### Q: How do you handle being the only technical person?

@@ -3,7 +3,7 @@
 Senior Software Engineer with **13+ years** of experience delivering high-impact systems across e-commerce, healthcare, and B2B marketplaces. Proven track record across **the rare trifecta**: deep technical expertise (security, AI/LLM integration, distributed systems), measurable business impact (**$7M+ in savings/revenue**), and cross-functional leadership (mentored 4+ engineers to promotion, influenced 10-15 teams).
 
 **Career Highlights:**
-- **Crisis Management:** Solo recovery from $500K AWS security breach—implemented production-grade hardening, convinced AWS to cancel fraudulent charges, saved company from bankruptcy
+- **Crisis Management:** Solo recovery from $500K AWS security breach—implemented production-grade hardening, convinced AWS to cancel fraudulent charges, contained crisis early and avoided all losses
 - **Cost Optimization:** Eliminated 100TB storage ($120K/year savings), architected Five 9s availability systems
 - **Innovation:** Self-initiated AI moderation reducing arbitration 20% ($50K/year savings); designed Antlr4 DSL driving $2M revenue
 - **Leadership:** Mentored engineers to promotion, led cross-team initiatives (Brexit compliance, platform migrations), taught SOLID/TDD principles
@@ -85,7 +85,7 @@ Led the technical architecture of a HIPAA-compliant health-tech startup, scaling
 Led full-stack development and crisis management for geospatial food recovery marketplace.
 
 **Security & Crisis Management:**
-*   **Recovered from $500K CAD AWS security breach** as sole technical person: worked with AWS consultants to identify and delete hacker infrastructure, implemented comprehensive security hardening (IAM least-privilege policies, MFA enforcement, CloudTrail logging, AWS Config compliance rules, IP whitelisting, VPC isolation), presented audit trail that convinced AWS to **cancel entire fraudulent balance**—**saved company from bankruptcy**.
+*   **Recovered from $500K CAD AWS security breach** as sole technical person: worked with AWS consultants to identify and delete hacker infrastructure, implemented comprehensive security hardening (IAM least-privilege policies, MFA enforcement, CloudTrail logging, AWS Config compliance rules, IP whitelisting, VPC isolation), presented audit trail that convinced AWS to **cancel entire fraudulent balance**—**contained crisis early and avoided all losses**.
 *   Implemented production-grade AWS security from scratch after breach, preventing all future incidents.
 
 **Platform Development:**

@@ -41,14 +41,14 @@ FoodMesh is a social impact platform that connects food businesses (farms, groce
 - **$500K CAD saved** (AWS cleared fraudulent charges)
 - **Zero downtime** for the platform during recovery
 - **Production-grade security** implemented from scratch
-- **Company survival:** This incident could have bankrupted the startup
-
-**What This Demonstrates:**
-- Crisis management under extreme pressure (company at risk)
-- Solo ownership (only technical person handling a $500K crisis)
-- Security expertise (IAM, MFA, CloudTrail, Config, auditing)
-- Stakeholder management (AWS consultants, leadership)
-- Accountability and documentation rigor
+- **Company survival:** This incident posed an existential threat to the startup
+ 
+ **What This Demonstrates:**
+ - Crisis management under extreme pressure (company at risk)
+ - Solo ownership (only technical person handling a $500K crisis)
+ - Security expertise (IAM, MFA, CloudTrail, Config, auditing)
+ - Stakeholder management (AWS consultants, leadership)
+ - Accountability and documentation rigor
 
 ---
 

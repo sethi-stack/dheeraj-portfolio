@@ -41,7 +41,7 @@
 - Built **CI/CD pipelines** integrating Docker and AWS for reliable, automated deployments
 
 ### FoodMesh
-- **Recovered from $500K CAD AWS hack** as the sole technical person: implemented comprehensive security hardening, collaborated with AWS consultants to **cancel fraudulent charges**—**saved company from bankruptcy**
+- **Recovered from $500K CAD AWS hack** as the sole technical person: implemented comprehensive security hardening, collaborated with AWS consultants to **cancel fraudulent charges**—**contained crisis early and avoided all losses**
 - Built geospatial food recovery marketplace that diverted **35 million kg** of food waste and reduced CO2 emissions by **96 million kg**
 - Optimized **PostGIS** spatial queries to reduce matching latency from 2 seconds to **<50ms**
 
@@ -102,7 +102,7 @@
 *Emphasize: Solo ownership, wearing multiple hats, rapid execution*
 
 ### FoodMesh
-- **Solo technical person** who recovered from $500K AWS hack, implemented security, and saved company from bankruptcy
+- **Solo technical person** who recovered from $500K AWS hack, implemented security, and contained crisis early avoiding all losses
 - Built full-stack geospatial marketplace from scratch (Python/Django backend, React frontend, Flutter mobile app)
 - **Wore all hats:** Backend, frontend, mobile, DevOps, security, stakeholder management
 

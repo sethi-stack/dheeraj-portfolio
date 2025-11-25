@@ -3,14 +3,14 @@
 ## 1. Crisis Management: The $500K AWS Hack Recovery (FoodMesh)
 **Competency:** Crisis Management, Solo Ownership, Security Expertise
 *   **Situation:** At FoodMesh, the AWS account was **hacked**. Attackers spun up massive cloud resources. Within 2 days, charges hit **$500,000 CAD**. The startup had ~$50k in the bank. This was an **existential threat**. I was the **only technical person** on the team.
-*   **Task:** Recover the platform, secure AWS, and convince AWS to cancel the fraudulent charges—or the company goes bankrupt.
+*   **Task:** Recover the platform, secure AWS, and convince AWS to cancel the fraudulent charges—or the company faces significant losses.
 *   **Action:** 
     - **Immediate Response (Day 1):** Contacted AWS support, worked with their consultants to freeze new resource creation. Spent 12 hours identifying every resource—legitimate vs. hacker-created. Documented everything meticulously.
-    - **Cleanup (Day 2):** Systematically deleted all attacker infrastructure (EC2 instances, Lambda functions, S3 buckets). Verified platform still worked after each deletion.
+    - **Cleanup (Day 2)::** Systematically deleted all attacker infrastructure (EC2 instances, Lambda functions, S3 buckets). Verified platform still worked after each deletion.
     - **Root Cause:** Found compromised IAM credentials (weak password, no MFA) and overly permissive policies (`*:*` permissions on production accounts).
     - **Security Hardening (Days 3-7):** Implemented **production-grade security from scratch**: rotated all IAM credentials, enforced MFA on all accounts, set up CloudTrail logging for all regions, implemented Config compliance rules (auto-alert on public S3 buckets), created least-privilege IAM policies, IP whitelisting, VPC isolation.
     - **Stakeholder Management:** Built a complete audit trail showing exactly which resources were legitimate vs. fraudulent. Presented evidence to AWS Support with detailed timelines and logs.
-*   **Result:** AWS **canceled the $500K in fraudulent charges**. The company was only billed for actual resources (~$800/month). **Saved the company from bankruptcy**. Platform had **zero downtime** during recovery. Implemented security measures that prevented any future incidents. Leadership recognized this as "the save that kept FoodMesh alive."
+*   **Result:** AWS **canceled the $500K in fraudulent charges**. The company was only billed for actual resources (~$800/month). **Contained crisis early and avoided all losses**. Platform had **zero downtime** during recovery. Implemented security measures that prevented any future incidents. Leadership recognized this as "the save that kept FoodMesh alive."
 
 ## 2. Conflict Resolution: The "Monolith vs. Microservices" Debate
 **Competency:** Technical Leadership, Negotiation

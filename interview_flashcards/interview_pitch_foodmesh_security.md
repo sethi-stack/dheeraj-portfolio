@@ -29,7 +29,7 @@ I implemented **production-grade security from scratch**. Rotated every IAM cred
 The whole time, I'm documenting everything—timestamps, resource IDs, costs. I built a complete audit trail showing exactly which resources were legitimate vs. fraudulent. Then I presented this evidence to AWS Support: 'Here's our actual usage pattern over 6 months. Here's the spike from the hack. Here's every resource we identified as fraudulent.'
 
 **The Outcome:**  
-AWS **canceled the entire $500,000**. We were only billed for our actual resources—about $800 that month. I literally saved the company from bankruptcy. And the platform had **zero downtime** during the entire recovery.
+AWS **canceled the entire $500,000**. We were only billed for our actual resources—about $800 that month. **I contained the crisis early and avoided all losses.** And the platform had **zero downtime** during the entire recovery.
 
 The founder said, 'This was the save that kept FoodMesh alive.' That felt pretty good.
 
@@ -46,7 +46,7 @@ I worked with AWS consultants to freeze resource creation, spent 12 hours identi
 
 Then I implemented **production-grade security from scratch**: rotated all credentials, enforced MFA, set up CloudTrail logging, Config compliance rules, least-privilege IAM policies, IP whitelisting—the works.
 
-I documented everything meticulously, built a complete audit trail, and presented it to AWS Support. They **canceled the entire $500K**. **Saved the company from bankruptcy**, zero downtime during recovery.
+I documented everything meticulously, built a complete audit trail, and presented it to AWS Support. They **canceled the entire $500K**. **Saved the company from huge financial losses**, zero downtime during recovery.
 
 That experience taught me that security, documentation, and staying calm under pressure are non-negotiable."
 
@@ -139,7 +139,7 @@ Failure teaches you faster than success. I'm a much better engineer because of t
 
 ## 🎯 Why This Story Is Powerful
 
-1. **High Stakes:** $500K loss = company bankruptcy. Literal survival scenario.
+1. **High Stakes:** $500K loss = company financial ruin and data loss. Literal survival scenario.
 2. **Solo Ownership:** No team to fall back on. Pure individual accountability.
 3. **Technical Depth:** Security implementation (IAM, CloudTrail, Config) shows real expertise.
 4. **Business Impact:** Saved $500K. Quantifiable.
