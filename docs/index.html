@@ -6,8 +6,56 @@
     <title>Senior Software Engineer | Tech Lead Portfolio</title>
     <meta name="description" content="13+ years delivering high-impact systems. $7M+ in business value. Staff Engineer specializing in AI, security, and platform architecture.">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            mermaid.initialize({ 
+                startOnLoad: true,
+                theme: 'dark',
+                themeVariables: {
+                    primaryColor: '#00d9ff',
+                    primaryTextColor: '#e4e7f1',
+                    primaryBorderColor: '#6366f1',
+                    lineColor: '#00d9ff',
+                    secondaryColor: '#6366f1',
+                    tertiaryColor: '#151934',
+                    background: '#0a0e27',
+                    mainBkg: '#151934',
+                    secondBkg: '#0a0e27',
+                    textColor: '#e4e7f1',
+                    fontSize: '14px'
+                }
+            });
+        });
+    </script>
+
+
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo">DS</a>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#projects" class="nav-link">Projects ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://openlane.ca" target="_blank" rel="noopener">🚗 Openlane</a></li>
+                        <li><a href="https://hollandandbarrett.com" target="_blank" rel="noopener">🌿 Holland & Barrett</a></li>
+                        <li><a href="https://www.rheumera.com" target="_blank" rel="noopener">🏥 Rheumera</a></li>
+                        <li><a href="https://foodmesh.ca" target="_blank" rel="noopener">🍃 FoodMesh</a></li>
+                        <li><a href="https://sicscore.com" target="_blank" rel="noopener">🏈 SIC Score</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#architecture" class="nav-link">System Design</a></li>
+                <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Tech Arsenal</a></li>
+                <li class="nav-item"><a href="#other-pursuits" class="nav-link">Contributions</a></li>
+            </ul>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="container">
@@ -294,6 +342,207 @@
         </div>
     </section>
 
+    <!-- System Design & Architecture -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">System Design & Architecture</h2>
+            <p class="section-subtitle">Scalable solutions for complex technical challenges</p>
+            
+            <div class="architecture-grid">
+                <!-- IAM Service Architecture -->
+                <div class="architecture-card">
+                    <h3>🔐 IAM Service - Five 9s Uptime</h3>
+                    <div class="architecture-problem">
+                        <strong>Problem:</strong> Unify 3 legacy authentication systems while maintaining 99.999% uptime
+                    </div>
+                    
+                    <div class="mermaid">
+graph TB
+    subgraph "Client Layer"
+        Web[Web App]
+        Mobile[Mobile App]
+        API[API Clients]
+    end
+    
+    subgraph "Load Balancer"
+        LB[AWS ALB<br/>Multi-AZ]
+    end
+    
+    subgraph "IAM Service - Multi-Region"
+        IAM1[IAM Service<br/>Region 1]
+        IAM2[IAM Service<br/>Region 2]
+        Cache1[Redis Cache<br/>Region 1]
+        Cache2[Redis Cache<br/>Region 2]
+    end
+    
+    subgraph "Legacy Systems"
+        Legacy1[Legacy Auth 1]
+        Legacy2[Legacy Auth 2]
+        Legacy3[Legacy Auth 3]
+    end
+    
+    subgraph "Data Layer"
+        DB[("PostgreSQL<br/>Primary")]
+        DBR[("PostgreSQL<br/>Read Replicas")]
+    end
+    
+    Web --> LB
+    Mobile --> LB
+    API --> LB
+    LB --> IAM1
+    LB --> IAM2
+    IAM1 --> Cache1
+    IAM2 --> Cache2
+    IAM1 --> Legacy1
+    IAM1 --> Legacy2
+    IAM1 --> Legacy3
+    IAM2 --> Legacy1
+    IAM2 --> Legacy2
+    IAM2 --> Legacy3
+    IAM1 --> DB
+    IAM2 --> DB
+    DB --> DBR
+                    </div>
+                    
+                    <div class="architecture-solution">
+                        <strong>Solution:</strong> Multi-region distributed IAM service with Redis caching, database replication, and gradual legacy system migration
+                    </div>
+                    
+                    <div class="architecture-impact">
+                        <span class="impact-metric">99.999% Uptime</span>
+                        <span class="impact-metric">Zero Downtime</span>
+                        <span class="impact-metric">3 Systems Unified</span>
+                    </div>
+                </div>
+
+                <!-- AI Moderation Pipeline -->
+                <div class="architecture-card">
+                    <h3>🤖 AI Moderation Pipeline</h3>
+                    <div class="architecture-problem">
+                        <strong>Problem:</strong> Manual arbitration consuming 20% of team time, slow dispute resolution, losses due to canceled deals
+                    </div>
+                    
+                    <div class="mermaid">
+graph LR
+    subgraph "User Actions"
+        User[User Dispute]
+    end
+    
+    subgraph "API Gateway"
+        API[Dispute API]
+    end
+    
+    subgraph "Moderation Service"
+        Queue[SQS Queue]
+        Mod[Moderation<br/>Service]
+        Rules[Business Rules<br/>Engine]
+    end
+    
+    subgraph "AI Layer"
+        Gemini[Google Gemini<br/>API]
+        Prompt[Prompt<br/>Engineering]
+    end
+    
+    subgraph "Decision Layer"
+        Decision{"Confidence<br/>Score"}
+        Auto[Auto-Resolve]
+        Human[Human Review<br/>Queue]
+    end
+    
+    subgraph "Storage"
+        DB[("PostgreSQL")]
+        S3[S3 Evidence<br/>Storage]
+    end
+    
+    User --> API
+    API --> Queue
+    Queue --> Mod
+    Mod --> Rules
+    Rules --> Prompt
+    Prompt --> Gemini
+    Gemini --> Decision
+    Decision -->|">85%"| Auto
+    Decision -->|"<85%"| Human
+    Auto --> DB
+    Human --> DB
+    Mod --> S3
+                    </div>
+                    
+                    <div class="architecture-solution">
+                        <strong>Solution:</strong> Self-initiated AI moderation pipeline with Gemini integration, confidence-based routing, and fallback to human review
+                    </div>
+                    
+                    <div class="architecture-impact">
+                        <span class="impact-metric">$50K/year Savings</span>
+                        <span class="impact-metric">20% Reduction</span>
+                        <span class="impact-metric">VP-Recognized</span>
+                    </div>
+                </div>
+
+                <!-- Storage Optimization -->
+                <div class="architecture-card">
+                    <h3>💾 Storage Optimization</h3>
+                    <div class="architecture-problem">
+                        <strong>Problem:</strong> 100TB storage explosion from duplicate images, $120K/year cost
+                    </div>
+                    
+                    <div class="mermaid">
+graph TB
+    subgraph "Before: Random UUIDs"
+        Upload1[Image Upload 1]
+        UUID1[UUID: random-123]
+        S31[S3: /random-123/img.jpg]
+        
+        Upload2[Same Image Upload 2]
+        UUID2[UUID: random-456]
+        S32[S3: /random-456/img.jpg]
+        
+        Upload3[Same Image Upload 3]
+        UUID3[UUID: random-789]
+        S33[S3: /random-789/img.jpg]
+    end
+    
+    subgraph "After: Determinable UUID"
+        Upload4[Image Upload]
+        Hash[SHA-256 Hash]
+        DeterUUID[Determinable UUID<br/>Based on Content]
+        Check{"Already<br/>Exists?"}
+        S34[S3: /content-hash/img.jpg]
+        Ref[Reference Existing]
+    end
+    
+    Upload1 --> UUID1 --> S31
+    Upload2 --> UUID2 --> S32
+    Upload3 --> UUID3 --> S33
+    
+    Upload4 --> Hash
+    Hash --> DeterUUID
+    DeterUUID --> Check
+    Check -->|No| S34
+    Check -->|Yes| Ref
+    
+    style S31 fill:#ef4444
+    style S32 fill:#ef4444
+    style S33 fill:#ef4444
+    style S34 fill:#10b981
+    style Ref fill:#10b981
+                    </div>
+                    
+                    <div class="architecture-solution">
+                        <strong>Solution:</strong> Determinable UUID algorithm using SHA-256 content hashing for automatic deduplication
+                    </div>
+                    
+                    <div class="architecture-impact">
+                        <span class="impact-metric">$120K/year Savings</span>
+                        <span class="impact-metric">95% Storage Reduction</span>
+                        <span class="impact-metric">100TB Eliminated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Additional Projects Carousel -->
     <section id="additional-projects" class="additional-projects">
         <div class="container">
@@ -481,6 +730,9 @@
             </div>
         </div>
     </section>
+
+
+
     <!-- Testimonials -->
     <section id="testimonials" class="testimonials">
         <div class="container">
@@ -610,6 +862,21 @@
             </div>
         </div>
     </section>
+
+    <!-- Other Pursuits -->
+    <section id="other-pursuits" class="other-pursuits">
+        <div class="container">
+            <h2 class="section-title">Beyond Tech</h2>
+            <div class="pursuits-grid">
+                <ul class="pursuits-list">
+                    <li>🧘‍♀️ Yoga Instructor – Teaching Vinyasa flow and mindfulness.</li>
+                    <li>✨ Pranic Healing – Energy work for wellness and balance.</li>
+                    <li>🎤 Carnatic Singing Enthusiast – Practicing South Indian classical music.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- Education & Certifications -->
     <section id="education" class="education">
         <div class="container">
@@ -693,6 +960,86 @@
         </div>
     </footer>
 
+    <!-- Diagram Zoom Modal -->
+    <div id="diagramModal" class="diagram-modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content-wrapper">
+            <div id="modalDiagramContent" class="modal-diagram-content"></div>
+        </div>
+    </div>
+
+    <script>
+        // Diagram zoom functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('diagramModal');
+            const modalContent = document.getElementById('modalDiagramContent');
+            const closeBtn = document.querySelector('.modal-close');
+            
+            // Add click handlers to all mermaid diagrams
+            document.querySelectorAll('.mermaid').forEach(diagram => {
+                diagram.style.cursor = 'pointer';
+                diagram.title = 'Click to zoom';
+                
+                diagram.addEventListener('click', function() {
+                    // Clone the diagram content
+                    const clonedDiagram = this.cloneNode(true);
+                    modalContent.innerHTML = '';
+                    modalContent.appendChild(clonedDiagram);
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close modal on X click
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal on background click
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Close modal on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Navigation toggle for mobile
+        function toggleNav() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.querySelector('.dropdown');
+            if (dropdown && !dropdown.contains(event.target)) {
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                if (dropdownMenu) {
+                    dropdownMenu.style.display = 'none';
+                }
+            }
+        });
+
+        // Sticky navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
