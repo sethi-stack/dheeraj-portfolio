@@ -1,89 +1,45 @@
-# Tech Lead Knowledge Repository
+# Engineering Portfolio: Senior Software Engineer & Tech Lead
 
-Welcome to the **Tech Lead Knowledge Repository**. This repository is designed to be a comprehensive resource for aspiring and existing Tech Leads, covering advanced architecture, system design, low-level design, and algorithmic problem-solving.
+Welcome to my engineering portfolio repository. This collection showcases my journey, technical depth, and leadership philosophy as a Senior Software Engineer and Tech Lead with over 13 years of experience.
 
-## 🎯 Goal
-To provide a structured learning path and reference manual for mastering the technical and leadership skills required of a Tech Lead.
+## 🎯 About This Repository
+This is not just a resume—it's a deep dive into the **systems I've built**, the **decisions I've made**, and the **teams I've led**. It is structured to demonstrate my readiness for Staff/Tech Lead roles.
 
-## 📚 Table of Contents
+## 📂 Repository Structure
 
-### 1. [Architecture](./docs/architecture/architectural_concepts.md)
-Deep dives into architectural patterns, styles, and trade-offs.
-- [Architectural Concepts](./docs/architecture/architectural_concepts.md)
-- [Cloud Native & Microservices](./docs/architecture/cloud_native.md)
-- [Patterns & Trade-offs](./docs/architecture/patterns_and_tradeoffs.md)
-- [DDD, Hexagonal, CQRS, Event Sourcing](./docs/architecture/ddd_hexagonal_cqrs_event_sourcing.md)
+### 1. [Career Summary](./career-summary/)
+*   **[Timeline](./career-summary/timeline.md):** Visual journey from Holland & Barrett to Openlane.
+*   **[Core Strengths](./career-summary/strengths.md):** My technical and leadership superpowers.
+*   **[Leadership Philosophy](./career-summary/leadership_philosophy.md):** How I build high-performing teams.
 
-### 2. [System Design](./docs/system_design/system_design_index.md)
-Conversational guides and diagrams for designing scalable systems.
-- [System Design Index](./docs/system_design/system_design_index.md)
-- [Conversational Solutions](./docs/system_design/conversational_solutions/)
+### 2. Featured Projects
+Deep dives into my most impactful work, including architecture diagrams, system design breakdowns, and code samples.
 
-### 3. [Low Level Design (LLD)](./docs/lld/lld_index.md)
-Object-oriented design principles, design patterns, and TypeScript implementations.
-- [LLD Index](./docs/lld/lld_index.md)
-- [Class Diagrams](./docs/lld/class_diagrams/)
-- [Implementations](./docs/lld/implementations/)
+*   **🚗 [Openlane Inc.](./projects/openlane/overview.md):** Migrating a B2B auction platform to .NET microservices & integrating AI moderation.
+*   **🏥 [Rheumera](./projects/rheumera/overview.md):** Architecting a remote therapeutic monitoring platform for rheumatology clinics.
+*   **🍎 [FoodMesh](./projects/foodmesh/overview.md):** Building a food recovery marketplace to divert 35M kg of waste.
+*   **💊 [Holland & Barrett](./projects/holland-barrett/overview.md):** Modernizing e-commerce search with ElasticSearch & NLP.
 
-### 4. [Algorithms](./docs/algorithms/explanations/)
-A curated list of algorithms with TypeScript implementations and explanations.
-- [TypeScript Implementations](./src/algorithms/)
-- [Explanations](./docs/algorithms/explanations/)
+### 3. [Story Bank](./story_bank/)
+*   **[STAR Stories](./story_bank/star_stories.md):** Detailed behavioral examples (Situation, Task, Action, Result).
+*   **[CAR Stories](./story_bank/car_stories.md):** Concise Context-Action-Result summaries.
+*   **[Behavioral Q&A](./story_bank/behavioral_questions.md):** My approach to conflict, failure, and mentoring.
 
-### 5. [Communication & Leadership](./docs/communication/techlead_communication_roadmap.md)
-Essential communication skills and leadership practices for tech leads.
-- [Tech Lead Communication Roadmap](./docs/communication/techlead_communication_roadmap.md) - From IC to Tech Lead communication transformation
-- [Production Engineering & Leadership Concepts](./docs/concepts/production_engineering_concepts.md) - Observability, deployment, security, APIs, performance, modern practices
-
-### 6. [Papers & Concepts](./docs/papers_and_concepts/)
-Summaries of influential research papers and core distributed systems concepts.
+### 4. Technical Preparation
+*   **[System Design Prep](./system_design_preparation/):** Tailored design problems based on my real-world experience.
+*   **[Interview Flashcards](./interview_flashcards/):** Quick review for Tech Lead, Architecture, and System Design topics.
 
 ---
 
-## 📖 Personalized Study Roadmap
-
-**For experienced engineers (8+ years) preparing for Tech Lead/Staff/Principal roles:**
-
-This repository doubles as a comprehensive self-study curriculum. We've created a structured 24-week roadmap with:
-- **3 intensity tracks** (Aggressive: 15-20h/week, Balanced: 10-12h/week, Gradual: 6-8h/week)
-- **Phase-based learning** (Algorithms → System Design → Architecture → Communication → Mocks)
-- **Spaced repetition** and active recall techniques
-- **Real-world application** strategies
-- **Mock interview schedules**
-
-👉 **[View Full Study Roadmap](./STUDY_ROADMAP.md)**  
-👉 **[Track Your Progress](./PROGRESS_TRACKER.md)**
+## 🛠️ Tech Stack Highlights
+*   **Languages:** C# (.NET), TypeScript/JavaScript, Python, Java
+*   **Frontend:** React, Node.js, Svelte, StencilJs
+*   **Backend:** Microservices, Spring Boot, Django, REST, GraphQL
+*   **Cloud & DevOps:** AWS (Lambda, Kinesis), Azure, Docker, Kubernetes, ArgoCD
+*   **Data & AI:** ElasticSearch, Kafka, Pulsar, LLM Integration (OpenAI)
 
 ---
 
-## 🗓️ Weekly Practice Plan
-
-| Week | Focus Area | Activities |
-|------|------------|------------|
-| **1** | **Foundations & Algorithms** | Review [Arrays](./docs/algorithms/explanations/arrays.md) & [Strings](./docs/algorithms/explanations/strings.md). Implement 5 LeetCode Mediums. |
-| **2** | **System Design Basics** | Study [Scalability Fundamentals](./docs/system_design/system_design_index.md). Design a [URL Shortener](./docs/system_design/conversational_solutions/design_url_shortener.md). |
-| **3** | **Advanced Architecture** | Read about [DDD & CQRS](./docs/architecture/ddd_hexagonal_cqrs_event_sourcing.md). Apply patterns to a mock project. |
-| **4** | **Low Level Design** | Practice [Design Patterns](./docs/lld/lld_index.md). Implement a [Parking Lot](./docs/lld/implementations/parking_lot.ts). |
-| **5** | **Distributed Systems** | Read [Dynamo Paper](./docs/papers_and_concepts/storage_and_databases.md). Understand consistency models. |
-| **6** | **Leadership & Communication** | Review [Tech Lead Communication Roadmap](./docs/communication/techlead_communication_roadmap.md). Practice STAR method for behavioral questions. |
-
-## 🚀 Getting Started
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/your-username/tech-lead-knowledge-repo.git
-    cd tech-lead-knowledge-repo
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-
-3.  **Run tests:**
-    ```bash
-    npm test
-    ```
-
-## 🤝 Contribution
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 📬 Contact
+*   **LinkedIn:** [Your Profile Link]
+*   **Email:** [Your Email]
