@@ -25,9 +25,16 @@
 *   Mentored 2 junior engineers to promotion by establishing code review standards and leading weekly architectural design sessions.
 
 ## FoodMesh (Software Consultant)
-*   Built a geospatial food recovery marketplace that diverted **35 million kg** of food waste and reduced CO2 emissions by **96 million kg**.
+
+**Security & Crisis Management:**
+*   **Recovered from $500K CAD AWS hack** as the sole technical person: identified hacker resources, implemented comprehensive security hardening (IAM, 2FA, CloudTrail, Config, auditing), collaborated with AWS consultants to **cancel fraudulent charges**—**saved company from bankruptcy**.
+*   Implemented production-grade AWS security: least-privilege IAM policies, multi-factor authentication, CloudTrail logging, Config compliance rules, IP whitelisting, VPC isolation.
+
+**Platform Development:**
+*   Built geospatial food recovery marketplace that diverted **35 million kg** of food waste and reduced CO2 emissions by **96 million kg**.
 *   Optimized **PostGIS** spatial queries to reduce matching latency from 2 seconds to **<50ms**, enabling real-time logistics for drivers.
-*   Developed a **Flutter** mobile app for drivers with **99.9% crash-free rate**, ensuring reliable operation in low-connectivity rural areas.
+*   Developed **Flutter** mobile app for drivers with **99.9% crash-free rate**, ensuring reliable operation in low-connectivity rural areas.
+*   Created geospatial visualization tool for tracking donation networks and impact metrics (food diverted, CO2 saved).
 
 ## Holland & Barrett (Software Engineer)
 

@@ -80,14 +80,19 @@ Led the technical architecture of a HIPAA-compliant health-tech startup, scaling
 ### **Software Consultant** (Part-Time) — FoodMesh Inc. (Food Recovery Platform)
 *2022 – 2023 | Remote*
 
-Built geospatial marketplace technology connecting food donors with charities across Western Canada.
+Led full-stack development and crisis management for geospatial food recovery marketplace.
 
-*   Developed a **full-stack geospatial marketplace** that diverted **35 million kg** of food waste (equivalent to **50M meals**) and reduced CO2 emissions by **96M kg**.
-*   Optimized **PostGIS spatial queries** to reduce charity matching latency from 2 seconds to **<50ms**, enabling real-time logistics for volunteer drivers.
-*   Created an **impact tracking dashboard** visualizing donation networks and environmental metrics for municipal stakeholders.
-*   Built a **Flutter mobile app** for drivers with **99.9% crash-free rate**, ensuring reliable operation in low-connectivity rural areas.
+**Security & Crisis Management:**
+*   **Recovered from $500K CAD AWS security breach** as sole technical person: worked with AWS consultants to identify and delete hacker infrastructure, implemented comprehensive security hardening (IAM least-privilege policies, MFA enforcement, CloudTrail logging, AWS Config compliance rules, IP whitelisting, VPC isolation), presented audit trail that convinced AWS to **cancel entire fraudulent balance**—**saved company from bankruptcy**.
+*   Implemented production-grade AWS security from scratch after breach, preventing all future incidents.
 
-**Technologies:** Python, Django, React, Flutter, PostGIS, Google Maps API, RabbitMQ
+**Platform Development:**
+*   Built full-stack geospatial marketplace that diverted **35 million kg** of food waste (equivalent to **50M meals**) and reduced CO2 emissions by **96M kg**.
+*   Optimized **PostGIS** spatial queries to reduce charity matching latency from 2 seconds to **<50ms**, enabling real-time logistics for volunteer drivers.
+*   Created **impact tracking dashboard** visualizing donation networks and environmental metrics for municipal stakeholders.
+*   Built **Flutter mobile app** for drivers with **99.9% crash-free rate**, ensuring reliable operation in low-connectivity rural areas.
+
+**Technologies:** Python, Django, React, Flutter, PostGIS, Google Maps API, RabbitMQ, AWS (IAM, CloudTrail, Config, VPC)
 
 ---
 
