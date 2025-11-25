@@ -1,16 +1,18 @@
-# Technical Lead & Senior Software Engineer
-
-**Location:** Toronto, ON, Canada  
-**Email:** [Your Email]  
-**LinkedIn:** [Your LinkedIn]  
-**GitHub:** [Your GitHub]  
-**Portfolio:** [Link to this repo]
-
----
-
 ## Professional Summary
 
-Senior Software Engineer with **13+ years** of experience architecting and delivering scalable, high-impact systems across e-commerce, healthcare, and B2B marketplaces. Proven expertise in **microservices migration**, **AI/LLM integration**, and **cloud-native architecture** (AWS, Azure). Track record of leading cross-functional teams, delivering **$M+ revenue impact**, and mentoring engineers to promotion. Passionate about pragmatic engineering that balances innovation with operational excellence.
+Senior Software Engineer with **13+ years** of experience delivering high-impact systems across e-commerce, healthcare, and B2B marketplaces. Proven track record across **the rare trifecta**: deep technical expertise (security, AI/LLM integration, distributed systems), measurable business impact (**$7M+ in savings/revenue**), and cross-functional leadership (mentored 4+ engineers to promotion, influenced 10-15 teams).
+
+**Career Highlights:**
+- **Crisis Management:** Solo recovery from $500K AWS security breach—implemented production-grade hardening, convinced AWS to cancel fraudulent charges, saved company from bankruptcy
+- **Cost Optimization:** Eliminated 100TB storage ($120K/year savings), architected Five 9s availability systems
+- **Innovation:** Self-initiated AI moderation reducing arbitration 20% ($50K/year savings); designed Antlr4 DSL driving $2M revenue
+- **Leadership:** Mentored engineers to promotion, led cross-team initiatives (Brexit compliance, platform migrations), taught SOLID/TDD principles
+
+**Technical Range:** Full-stack (MERN → .NET → React/Svelte), Cloud (AWS/Azure), AI (OpenAI/Gemini), Security (IAM/CloudTrail/Config), Geospatial (PostGIS), Grammar Engineering (Antlr4)
+
+Seeking **Staff/Tech Lead** roles where I can leverage solo ownership experience, business acumen, and technical versatility to drive both innovation and execution.
+
+---
 
 ---
 
